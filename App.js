@@ -12,9 +12,12 @@ import {makeJsonData} from './json/makeJson';
 import {findSynergy, findChampion} from './lib/findLib';
 import {champion} from './json/champion';
 import {findAllChampion} from './lib/findLib';
+import {splitWithPrice} from './lib/calPercent';
+import {mainData} from './json/mainJson';
 
 const App = () => {
-  console.log(findAllChampion(findSynergy('아칼리')));
+  console.log(splitWithPrice(mainData));
+
   return (
     <View>
       <Text>hello!!</Text>
