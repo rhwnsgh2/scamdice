@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {makeJsonData} from './json/makeJson';
 import {findSynergy, findChampion} from './lib/findLib';
 import {champion} from './json/champion';
@@ -16,13 +16,13 @@ import {splitWithPrice} from './lib/calPercent';
 import {mainData} from './json/mainJson';
 
 const App = () => {
-  console.log(splitWithPrice(mainData));
-
-  return (
-    <View>
-      <Text>hello!!</Text>
-    </View>
+  console.log(splitWithPrice(findAllChampion('범죄 조직')));
+  let imageTest = splitWithPrice(findAllChampion('범죄 조직')).lv1.map(
+    (element, index) => {
+      return <Image source={element.img} key={index} />;
+    },
   );
+  return <View>{imageTest}</View>;
 };
 
 const styles = StyleSheet.create({
