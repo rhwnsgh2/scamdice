@@ -9,31 +9,55 @@ export const CardContainer = props => {
   let cardList = props.champions.map((element, index) => {
     return <ChampionCard element={element} key={index} />;
   });
+  let levelName;
+  switch (props.level) {
+    case 'lv1':
+      levelName = '1단계';
+      break;
+    case 'lv2':
+      levelName = '2단계';
+      break;
+    case 'lv3':
+      levelName = '3단계';
+      break;
+    case 'lv4':
+      levelName = '4단계';
+      break;
+    case 'lv5':
+      levelName = '5단계';
+      break;
+  }
 
-  return <CardListSplit cardList={cardList} />;
+  const container = (
+    <View style={styles.background}>
+      <View style={[styles.background, styles.textBack]}>
+        <Text style={[styles.font, styles.layout]}>{levelName}</Text>
+      </View>
+      <CardListSplit cardList={cardList} />
+    </View>
+  );
+  return container;
 };
 
 export const CardListSplit = props => {
   let viewList = [];
   let cardList = [];
-  console.log(props.cardList.length);
   const [viewHeight, setViewHeight] = useState(100);
   for (let i = 0; i < props.cardList.length / 5; i++) {
     for (let j = 0; j < 5; j++) {
       if (props.cardList[i * 5 + j]) {
         cardList.push(props.cardList[i * 5 + j]);
       } else {
-        cardList.push(<View style={{flex: 1}} />);
+        cardList.push(<View style={{flex: 1}} key={j} />);
       }
     }
-    console.log(cardList);
     viewList.push(
       <View
         key={i}
         style={[styles.cardContainer, {height: viewHeight}]}
         onLayout={event => {
           const {width} = event.nativeEvent.layout;
-          setViewHeight((width / 5) * 0.85);
+          setViewHeight((width / 5) * 0.85 + 15);
         }}>
         {cardList}
       </View>,
@@ -43,11 +67,27 @@ export const CardListSplit = props => {
   return <View style={styles.mainContainer}>{viewList}</View>;
 };
 const styles = StyleSheet.create({
+  background: {
+    backgroundColor: '#f0f0f0',
+  },
   mainContainer: {
     flexDirection: 'column',
+    borderColor: 'black',
+    backgroundColor: '#f0f0f0',
   },
   cardContainer: {
     width: '100%',
     flexDirection: 'row',
+  },
+  font: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    backgroundColor: '#f0f0f0',
+    margin: 10,
+    flex: 0.6,
+  },
+  textBack: {
+    flexDirection: 'row',
+    alignContent: 'center',
   },
 });

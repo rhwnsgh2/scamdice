@@ -3,13 +3,18 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 
 export const ChampionCard = ({element}) => {
   const cardStyle = StyleSheet.compose(
-    cardStyles.container,
+    cardStyles.width,
     borderStyles['lv' + element.cost],
   );
 
   return (
-    <View style={cardStyle}>
-      <Image style={imageStyle.image} source={element.img} />
+    <View style={cardStyles.container}>
+      <View style={cardStyle}>
+        <Image style={imageStyle.image} source={element.img} />
+      </View>
+      <Text numberOfLines={1} style={textStyle.font}>
+        {element.name}
+      </Text>
     </View>
   );
 };
@@ -17,9 +22,14 @@ export const ChampionCard = ({element}) => {
 const cardStyles = StyleSheet.create({
   container: {
     width: '15%',
-    borderWidth: 3,
     borderRadius: 10,
     margin: 5,
+  },
+  width: {
+    width: '100%',
+    height: '85%',
+    borderWidth: 3,
+    borderRadius: 10,
   },
 });
 
@@ -47,5 +57,12 @@ const imageStyle = StyleSheet.create({
     resizeMode: 'cover',
     width: null,
     height: null,
+  },
+});
+
+const textStyle = StyleSheet.create({
+  font: {
+    fontSize: 13,
+    textAlign: 'center',
   },
 });

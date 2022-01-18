@@ -16,17 +16,23 @@ import {splitWithPrice} from './lib/calPercent';
 import {mainData} from './json/mainJson';
 import {ChampionCard} from './component/championCard';
 import {CardContainer} from './component/cardContainer';
+import {Head} from './component/headComponent';
 
 const App = () => {
   let cardContainerList = [];
   const allChampion = splitWithPrice(mainData);
   for (const level in allChampion) {
     cardContainerList.push(
-      <CardContainer champions={allChampion[level]} key={level} />,
+      <CardContainer
+        champions={allChampion[level]}
+        level={level}
+        key={level}
+      />,
     );
   }
   return (
     <View style={styles.container}>
+      <Head />
       <ScrollView>{cardContainerList}</ScrollView>
     </View>
   );
@@ -36,7 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollView: {
-    flexGrow: 1,
+    flex: 1,
   },
 });
 
