@@ -2,7 +2,6 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 
 export const ChampionCard = ({element}) => {
-  console.log(element);
   const cardStyle = StyleSheet.compose(
     cardStyles.container,
     borderStyles['lv' + element.cost],
@@ -17,9 +16,10 @@ export const ChampionCard = ({element}) => {
 
 const cardStyles = StyleSheet.create({
   container: {
-    borderRadius: 10,
+    width: '15%',
     borderWidth: 3,
-    flex: 1,
+    borderRadius: 10,
+    margin: 5,
   },
 });
 
@@ -44,7 +44,7 @@ const borderStyles = StyleSheet.create({
 const imageStyle = StyleSheet.create({
   image: {
     flex: 1,
-    resizeMode: 'contain',
+    resizeMode: 'cover',
     width: null,
     height: null,
   },

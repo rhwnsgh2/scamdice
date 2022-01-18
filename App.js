@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {makeJsonData} from './json/makeJson';
 import {findSynergy, findChampion} from './lib/findLib';
 import {champion} from './json/champion';
@@ -18,20 +18,25 @@ import {ChampionCard} from './component/championCard';
 import {CardContainer} from './component/cardContainer';
 
 const App = () => {
-  console.log(splitWithPrice(findAllChampion('범죄 조직')));
   let cardContainerList = [];
   const allChampion = splitWithPrice(mainData);
-  for (const property in allChampion) {
+  for (const level in allChampion) {
     cardContainerList.push(
-      <CardContainer champions={allChampion[property]} key={property} />,
+      <CardContainer champions={allChampion[level]} key={level} />,
     );
   }
-  return <View style={styles.container}>{cardContainerList}</View>;
+  return (
+    <View style={styles.container}>
+      <ScrollView>{cardContainerList}</ScrollView>
+    </View>
+  );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  scrollView: {
+    flexGrow: 1,
   },
 });
 
