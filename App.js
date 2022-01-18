@@ -15,15 +15,18 @@ import {findAllChampion} from './lib/findLib';
 import {splitWithPrice} from './lib/calPercent';
 import {mainData} from './json/mainJson';
 import {ChampionCard} from './component/championCard';
+import {CardContainer} from './component/cardContainer';
 
 const App = () => {
   console.log(splitWithPrice(findAllChampion('범죄 조직')));
-  let imageTest = splitWithPrice(findAllChampion('요들')).lv3.map(
-    (element, index) => {
-      return <ChampionCard element={element} key={index} />;
-    },
-  );
-  return <View style={styles.container}>{imageTest}</View>;
+  let cardContainerList = [];
+  const allChampion = splitWithPrice(mainData);
+  for (const property in allChampion) {
+    cardContainerList.push(
+      <CardContainer champions={allChampion[property]} key={property} />,
+    );
+  }
+  return <View style={styles.container}>{cardContainerList}</View>;
 };
 
 const styles = StyleSheet.create({
