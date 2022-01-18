@@ -17,7 +17,7 @@ import {mainData} from './json/mainJson';
 
 const App = () => {
   console.log(splitWithPrice(findAllChampion('범죄 조직')));
-  let imageTest = splitWithPrice(findAllChampion('범죄 조직')).lv1.map(
+  let imageTest = splitWithPrice(findAllChampion('요들')).lv3.map(
     (element, index) => {
       return <Image source={element.img} key={index} />;
     },
