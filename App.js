@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {makeJsonData} from './json/makeJson';
@@ -17,24 +9,20 @@ import {mainData} from './json/mainJson';
 import {ChampionCard} from './component/championCard';
 import {CardContainer} from './component/cardContainer';
 import {Head} from './component/headComponent';
+import {createStackNavigator} from '@react-navigation/stack';
+import {Main} from './navigator/main';
+import {NavigationContainer} from '@react-navigation/native';
 
+const Stack = createStackNavigator();
 const App = () => {
-  let cardContainerList = [];
-  const allChampion = splitWithPrice(mainData);
-  for (const level in allChampion) {
-    cardContainerList.push(
-      <CardContainer
-        champions={allChampion[level]}
-        level={level}
-        key={level}
-      />,
-    );
-  }
   return (
-    <View style={styles.container}>
-      <Head />
-      <ScrollView>{cardContainerList}</ScrollView>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="사기주사위"
+        screenOptions={{headerShown: false}}>
+        <Stack.Screen name="사기주사위" component={Main} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 const styles = StyleSheet.create({
