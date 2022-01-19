@@ -12,6 +12,7 @@ import {Head} from './component/headComponent';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Main} from './navigator/main';
 import {NavigationContainer} from '@react-navigation/native';
+import {Percent} from './navigator/percent';
 
 const Stack = createStackNavigator();
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
         initialRouteName="사기주사위"
         screenOptions={{headerShown: false}}>
         <Stack.Screen name="사기주사위" component={Main} />
+        <Stack.Screen name="확률" component={Percent} />
       </Stack.Navigator>
     </NavigationContainer>
   );

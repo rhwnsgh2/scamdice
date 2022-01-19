@@ -7,7 +7,13 @@ import {mainData} from './../json/mainJson';
 
 export const CardContainer = props => {
   let cardList = props.champions.map((element, index) => {
-    return <ChampionCard element={element} key={index} />;
+    return (
+      <ChampionCard
+        element={element}
+        key={index}
+        navigation={props.navigation}
+      />
+    );
   });
   let levelName;
   switch (props.level) {
@@ -33,7 +39,7 @@ export const CardContainer = props => {
       <View style={[styles.background, styles.textBack]}>
         <Text style={[styles.font, styles.layout]}>{levelName}</Text>
       </View>
-      <CardListSplit cardList={cardList} />
+      <CardListSplit cardList={cardList} navigation />
     </View>
   );
   return container;

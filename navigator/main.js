@@ -7,7 +7,7 @@ import {ChampionCard} from '../component/championCard';
 import {CardContainer} from '../component/cardContainer';
 import {Head} from '../component/headComponent';
 
-export const Main = () => {
+export const Main = ({navigation}) => {
   let cardContainerList = [];
   const allChampion = splitWithPrice(mainData);
   for (const level in allChampion) {
@@ -16,6 +16,7 @@ export const Main = () => {
         champions={allChampion[level]}
         level={level}
         key={level}
+        navigation={navigation}
       />,
     );
   }

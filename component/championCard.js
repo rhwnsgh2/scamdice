@@ -1,21 +1,23 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
-export const ChampionCard = ({element}) => {
+export const ChampionCard = ({element, navigation}) => {
   const cardStyle = StyleSheet.compose(
     cardStyles.width,
     borderStyles['lv' + element.cost],
   );
-
+  const onPress = () => {
+    navigation.navigate('확률', {champion: element.name});
+  };
   return (
-    <View style={cardStyles.container}>
+    <TouchableOpacity style={cardStyles.container} onPress={onPress}>
       <View style={cardStyle}>
         <Image style={imageStyle.image} source={element.img} />
       </View>
       <Text numberOfLines={1} style={textStyle.font}>
         {element.name}
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
