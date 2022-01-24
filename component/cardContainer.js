@@ -74,12 +74,12 @@ export const CardListSplit = props => {
 };
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#313236',
   },
   mainContainer: {
     flexDirection: 'column',
     borderColor: 'black',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#313236',
   },
   cardContainer: {
     width: '100%',
@@ -88,9 +88,10 @@ const styles = StyleSheet.create({
   font: {
     fontSize: 15,
     fontWeight: 'bold',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#313236',
     margin: 10,
     flex: 0.6,
+    color: 'white',
   },
   textBack: {
     flexDirection: 'row',

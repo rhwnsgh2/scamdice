@@ -11,12 +11,13 @@ export const Head = props => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#313236',
   },
   font: {
     fontSize: 20,
     fontWeight: 'bold',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#313236',
+    color: 'white',
     margin: 10,
   },
 });
