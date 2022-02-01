@@ -5,9 +5,10 @@ import {calcAllPercent} from '../lib/reroll';
 import {colorList} from './../lib/textColor';
 import {tableTitle} from './tableTitle';
 import {makeNormalArray, sortArray, uniqueArray} from '../lib/arrayLib';
+import {calcAllPercentOnChampion} from './../lib/reroll';
 export const TableRows = props => {
   const [percentList, setPercentList] = useState(
-    calcAllPercent(props.champion),
+    calcAllPercentOnChampion(props.champion),
   );
   let colorMap = makeColorMap(percentList);
   const tableData = percentList.map(element => {

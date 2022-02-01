@@ -2,9 +2,11 @@ import React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {PercentTable} from '../component/percentTable';
 import {AdBannerBottom} from './../component/adBannerBottom';
+import {calcAllPercentOnChampion} from './../lib/reroll';
 
 export const Percent = props => {
   const champion = props.route.params.champion;
+  calcAllPercentOnChampion(props.route.params.champion);
   return (
     <View style={styles.container}>
       <PercentTable champion={champion} />
