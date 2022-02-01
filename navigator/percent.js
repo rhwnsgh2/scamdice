@@ -1,13 +1,14 @@
 import React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {PercentTable} from '../component/percentTable';
+import {AdBannerBottom} from './../component/adBannerBottom';
 
 export const Percent = props => {
   const champion = props.route.params.champion;
   return (
     <View style={styles.container}>
       <PercentTable champion={champion} />
-      <View style={styles.advertise} />
+      <AdBannerBottom />
     </View>
   );
 };
@@ -38,8 +39,5 @@ const styles = StyleSheet.create({
     height: null,
     width: null,
     marginRight: 5,
-  },
-  advertise: {
-    flex: 0.1,
   },
 });

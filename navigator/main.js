@@ -6,6 +6,7 @@ import {mainData} from '../json/mainJson';
 import {ChampionCard} from '../component/championCard';
 import {CardContainer} from '../component/cardContainer';
 import {Head} from '../component/headComponent';
+import {AdBannerBottom} from './../component/adBannerBottom';
 
 export const Main = ({navigation}) => {
   let cardContainerList = [];
@@ -24,6 +25,7 @@ export const Main = ({navigation}) => {
     <View style={styles.container}>
       <Head />
       <ScrollView>{cardContainerList}</ScrollView>
+      <AdBannerBottom />
     </View>
   );
 };

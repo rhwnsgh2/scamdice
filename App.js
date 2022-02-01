@@ -7,12 +7,12 @@ import {findAllChampion} from './lib/findLib';
 import {splitWithPrice} from './lib/calPercent';
 import {mainData} from './json/mainJson';
 import {ChampionCard} from './component/championCard';
-import {CardContainer} from './component/cardContainer';
 import {Head} from './component/headComponent';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Main} from './navigator/main';
 import {NavigationContainer} from '@react-navigation/native';
 import {Percent} from './navigator/percent';
+import {AdBannerBottom} from './component/adBannerBottom';
 
 const Stack = createStackNavigator();
 const App = () => {

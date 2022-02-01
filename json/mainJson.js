@@ -72,7 +72,7 @@ export const mainData = [
     synergy: ['용병', '저격수'],
   },
   {
-    cost: 3,
+    cost: 2,
     img: require('../champion/Vi.png'),
     name: '바이',
     synergy: ['자매', '집행자', '난동꾼'],

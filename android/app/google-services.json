@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "924271441491",
+    "project_id": "scamdice-9eb14",
+    "storage_bucket": "scamdice-9eb14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924271441491:android:d6d8fb5f25f811a52b78a6",
+        "android_client_info": {
+          "package_name": "com.scamdice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924271441491-pt1nh6k9itronpbq5eo7b7bfjgfrrung.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.scamdice",
+            "certificate_hash": "8ace4c4e23733eccea1a9848af048a35011d932e"
+          }
+        },
+        {
+          "client_id": "924271441491-j46bg8s1esot0v93shu8jil9a3tkei1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7hI3ZpUAaTU4TyUJatLhguPtu7bFT7n8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924271441491-j46bg8s1esot0v93shu8jil9a3tkei1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

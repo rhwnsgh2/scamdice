@@ -4,7 +4,9 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 export const Head = props => {
   return (
     <View style={styles.container}>
-      <Text style={styles.font}>사고 싶은 챔피언을 선택하세요. </Text>
+      <Text style={styles.font}>
+        {'사기주사위를 사용하여\n뽑고 싶은 챔피언을 선택하세요.'}
+      </Text>
     </View>
   );
 };
