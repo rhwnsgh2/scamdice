@@ -15,12 +15,16 @@ export const PercentTable = props => {
     <ScrollView horizontal={true} style={styles.scrollView}>
       <View>
         <Table>
-          <TableHead widthList={widthList} />
+          <TableHead widthList={widthList} method={props.method} />
         </Table>
         <ScrollView>
           <Table>
             <TableWrapper style={styles.wrapper}>
-              <TableRows widthList={widthList} champion={props.champion} />
+              <TableRows
+                widthList={widthList}
+                champion={props.champion}
+                method={props.method}
+              />
             </TableWrapper>
           </Table>
         </ScrollView>

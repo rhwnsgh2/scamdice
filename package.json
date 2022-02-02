@@ -8,19 +8,23 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "clean":"cd android && gradlew clean",
-    "build":"cd android && gradlew bundleRelease"
+    "clean": "cd android && gradlew clean",
+    "build": "cd android && gradlew bundleRelease"
   },
   "dependencies": {
     "@react-native-firebase/admob": "11.5.0",
     "@react-native-firebase/app": "14.2.4",
     "@react-native-masked-view/masked-view": "0.2.6",
+    "@react-navigation/material-top-tabs": "6.1.0",
     "@react-navigation/native": "6.0.6",
     "@react-navigation/stack": "6.0.11",
     "react": "17.0.2",
     "react-native": "0.67.0",
+    "react-native-admob-alpha": "1.2.5",
     "react-native-gesture-handler": "2.2.0",
+    "react-native-pager-view": "5.4.9",
     "react-native-safe-area-context": "3.3.2",
+    "react-native-tab-view": "3.1.1",
     "react-native-table-component": "1.2.1"
   },
   "devDependencies": {

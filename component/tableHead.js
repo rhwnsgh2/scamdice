@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {Row} from 'react-native-table-component';
 
-export const tableHead = [
+export let tableHead = [
   '주사위를 쓸\n챔피언',
   'Level\n3',
   'Level\n4',
@@ -16,6 +16,11 @@ export const tableHead = [
 ];
 
 export const TableHead = props => {
+  if (props.method === 'use') {
+    tableHead[0] = '나오는 챔피언';
+  } else if (props.method === 'want') {
+    tableHead[0] = '주사위를 쓸\n 챔피언';
+  }
   return (
     <Row
       data={tableHead}

@@ -2,16 +2,35 @@ import React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {PercentTable} from '../component/percentTable';
 import {AdBannerBottom} from './../component/adBannerBottom';
-import {calcAllPercentOnChampion} from './../lib/reroll';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {Want} from './want';
+import {Use} from './use';
 
+const Tab = createMaterialTopTabNavigator();
 export const Percent = props => {
   const champion = props.route.params.champion;
-  calcAllPercentOnChampion(props.route.params.champion);
   return (
-    <View style={styles.container}>
-      <PercentTable champion={champion} />
-      <AdBannerBottom />
-    </View>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {backgroundColor: '#313236'},
+        tabBarLabelStyle: {fontSize: 15, color: 'white'},
+        swipeEnabled: false,
+        tabBarIndicatorStyle: {backgroundColor: 'white'},
+        tabBarPressOpacity: 0,
+      }}>
+      <Tab.Screen
+        name="want"
+        component={Want}
+        initialParams={{champion: champion}}
+        options={{title: '해당 챔피언을\n 뽑고 싶을 때'}}
+      />
+      <Tab.Screen
+        name="use"
+        component={Use}
+        initialParams={{champion: champion}}
+        options={{title: '해당 챔피언에게\n주사위 사용 시'}}
+      />
+    </Tab.Navigator>
   );
 };
 const styles = StyleSheet.create({
@@ -34,12 +53,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     borderLeftWidth: 1,
-  },
-  championImage: {
-    flex: 1,
-    resizeMode: 'contain',
-    height: null,
-    width: null,
-    marginRight: 5,
   },
 });
