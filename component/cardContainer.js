@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {ChampionCard} from './championCard';
-import {splitWithPrice} from './../lib/calPercent';
+import {splitWithCost} from './../lib/calPercent';
 import {findAllChampion} from './../lib/findLib';
 import {mainData} from './../json/mainJson';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 
-import {splitWithPrice} from '../lib/calPercent';
+import {splitWithCost} from '../lib/calPercent';
 import {mainData} from '../json/mainJson';
 import {ChampionCard} from '../component/championCard';
 import {CardContainer} from '../component/cardContainer';
@@ -10,13 +10,13 @@ import {AdBannerBottom} from './../component/adBannerBottom';
 
 export const Main = ({navigation}) => {
   let cardContainerList = [];
-  const allChampion = splitWithPrice(mainData);
-  for (const level in allChampion) {
+  const allChampion = splitWithCost(mainData);
+  for (const cost in allChampion) {
     cardContainerList.push(
       <CardContainer
-        champions={allChampion[level]}
-        level={level}
-        key={level}
+        champions={allChampion[cost]}
+        level={cost}
+        key={cost}
         navigation={navigation}
       />,
     );
