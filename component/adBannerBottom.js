@@ -3,7 +3,7 @@ import {BannerAd, BannerAdSize, TestIds} from '@react-native-firebase/admob';
 
 export const AdBannerBottom = () => (
   <BannerAd
-    unitId={'ca-app-pub-7885446439711866/3640601223'}
+    unitId={TestIds.BANNER}
     size={BannerAdSize.FULL_BANNER}
     requestOptions={{
       requestNonPersonalizedAdsOnly: true,

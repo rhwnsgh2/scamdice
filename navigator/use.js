@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react';
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {PercentTable} from '../component/percentTable';
 import {AdBannerBottom} from '../component/adBannerBottom';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {AdMobInterstitial} from 'react-native-admob-alpha';
 
 export const Use = props => {

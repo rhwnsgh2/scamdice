@@ -16,6 +16,7 @@ import {AdBannerBottom} from './component/adBannerBottom';
 
 const Stack = createStackNavigator();
 const App = () => {
+  makeJsonData();
   return (
     <NavigationContainer>
       <Stack.Navigator

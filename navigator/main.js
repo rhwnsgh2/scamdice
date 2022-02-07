@@ -1,9 +1,7 @@
 import React from 'react';
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
-
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {splitWithCost} from '../lib/calPercent';
 import {mainData} from '../json/mainJson';
-import {ChampionCard} from '../component/championCard';
 import {CardContainer} from '../component/cardContainer';
 import {Head} from '../component/headComponent';
 import {AdBannerBottom} from './../component/adBannerBottom';
